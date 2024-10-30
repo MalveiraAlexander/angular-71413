@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row justify-content-between mb-3">
+    <div class="col-md-6 col-12 align-items-center align-self-center">
+      <h2>Usuarios</h2>
+    </div>
+    <div class="col-md-6 col-12 align-items-center align-self-center">
+      <button class="btn btn-primary float-end">Nuevo Usuario</button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    @for (user of users(); track user.id) {
+      <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class="card mb-3 p-3">
+          <div class="container">
+            <div class="row">
+              <p><span class="fw-bold">Nombre: </span>{{user.firstname}}</p>
+            </div>
+            <div class="row">
+              <p><span class="fw-bold">Apellido: </span>{{user.lastname}}</p>
+            </div>
+            <div class="row">
+              <div class="col-auto">
+                <button class="btn btn-info" routerLink="/main/users/{{user.id}}"><i class="fa-duotone fa-solid fa-eye"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
