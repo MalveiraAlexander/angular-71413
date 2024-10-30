@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      @if (showText()) {
+        <h3>Soy un texto!</h3>
+      }
+    </div>
+    <div class="col-6">
+      <button class="btn btn-info" (click)="changeShowText()">Ocultar Texto</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row justify-content-start">
+    @for (name of names(); track name) {
+      <div class="col-2">
+        <h5>{{name}}</h5>
+      </div>
+    }
+  </div>
+</div>
