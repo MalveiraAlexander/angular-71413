@@ -1,0 +1,16 @@
+<div class="container mt-2 animate__animated animate__fadeIn">
+  <div class="row justify-content-start mb-3">
+    <div class="col-auto align-items-center align-self-center">
+      <button class="btn btn-info" routerLink="/main/users"><i class="fa-duotone fa-solid fa-arrow-left"></i> Volver</button>
+    </div>
+    <div class="col-6 align-items-center align-self-center">
+      <h4 class="m-0">Usuario ID: {{user()?.id}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <p><span class="fw-bold">Nombre: </span>{{user()?.name}}</p><br>
+    <p><span class="fw-bold">Apellido: </span>{{user()?.lastName}}</p><br>
+    <p><span class="fw-bold">Email: </span><a href="mailto:{{user()?.email}}">{{user()?.email}}</a></p><br>
+    <p><span class="fw-bold">Género: </span>{{user()?.gender}}</p><br>
+  </div>
+</div>

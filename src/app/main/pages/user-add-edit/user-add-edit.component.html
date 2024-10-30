@@ -1,0 +1,47 @@
+@if (isLoading() && userId()) {
+  @defer (on immediate) {
+    <loading/>
+  }
+} @else {
+  <div class="container mt-2 animate__animated animate__fadeIn">
+    <div class="row justify-content-start mb-3">
+      <div class="col-auto align-items-center align-self-center">
+        <button class="btn btn-info" routerLink="/main/users"><i class="fa-duotone fa-solid fa-arrow-left"></i> Volver</button>
+      </div>
+      <div class="col-6 align-items-center align-self-center">
+        @if (userId()) {
+          <h4 class="m-0">Editar usuario ID: {{userId()}}</h4>
+        } @else {
+          <h4 class="m-0">Nuevo Usuario</h4>
+        }
+      </div>
+    </div>
+    <form [formGroup]="miFormulario()" (ngSubmit)="enviar()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="firstName" class="form-label">Nombre *</label>
+          <input formControlName="name" type="text" class="form-control" id="firstName" placeholder="Nombre" required>
+          <validator [control]="miFormulario().controls.name" name="Nombre"/>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastName" class="form-label">Apellido *</label>
+          <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Apellido" required>
+          <validator [control]="miFormulario().controls.lastName" name="Apellido"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email *</label>
+          <input formControlName="email" type="email" class="form-control" id="email" placeholder="example@mail.com" required>
+          <validator [control]="miFormulario().controls.email" name="Email"/>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="gender" class="form-label">Género</label>
+          <input formControlName="gender" type="text" class="form-control" id="gender" placeholder="Género">
+        </div>
+      </div>
+      <button type="submit" [disabled]="miFormulario().invalid" class="btn btn-success">Guardar</button>
+    </form>
+  </div>
+}
+

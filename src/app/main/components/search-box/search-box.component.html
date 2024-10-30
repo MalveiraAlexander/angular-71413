@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  @for (user of users(); track user.id) {
+    <div class="row mt-3">
+      <div class="col-10">
+        <h5>{{user.name}} {{user.lastName}}</h5>
+      </div>
+      <div class="col-2">
+        <button (click)="goToUser(user.id)" class="btn btn-info">Ver Más</button>
+      </div>
+    </div>
+    <hr>
+  }
+</div>

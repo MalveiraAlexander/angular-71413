@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "Alexander Exequiel",
+      "lastName": "Malveira",
+      "email": "malveiralexander@outlook.com",
+      "gender": "Masculino",
+      "id": "b816"
+    },
+    {
+      "id": "e8fb",
+      "name": "Tomas",
+      "lastName": "Bolotnicoff",
+      "email": "tbolotnicoff@mail.com",
+      "gender": "Masculino"
+    },
+    {
+      "id": "8b66",
+      "name": "Aleksandre",
+      "lastName": "Malveira",
+      "email": "amalveira@mail.com",
+      "gender": "Masculino"
+    },
+    {
+      "id": "7a0e",
+      "name": "Facundo|",
+      "lastName": "Banegaz",
+      "email": "fbanegaz@mail.com",
+      "gender": "Masculino"
+    }
+  ]
+}

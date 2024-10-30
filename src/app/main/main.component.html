@@ -1,0 +1,17 @@
+<nav class="navbar bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Clase 4</a>
+    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main/user">User</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/main/users" routerLinkActive="active">Users</a>
+      </li>
+    </ul>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" (keyup)="stateService.search($event)" type="search" placeholder="Buscar" aria-label="Search">
+    </form>
+  </div>
+</nav>
+<router-outlet/>

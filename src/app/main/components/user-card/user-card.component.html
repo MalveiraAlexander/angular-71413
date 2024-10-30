@@ -1,0 +1,44 @@
+<div class="card mb-3">
+  @if (name()) {
+    <div class="card-header">
+      <h5>{{name()}}</h5>
+    </div>
+  }
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+  @if (showDetails() || showDelete() || showEdit()) {
+    <div class="card-footer">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          @if (showDetails()) {
+            <div class="col-auto">
+              <button class="btn btn-info" (click)="onView.emit(id())">
+                <i class="fa-duotone fa-solid fa-eye"></i>
+              </button>
+            </div>
+          }
+          @if (showDelete()) {
+            <div class="col-auto">
+              <button class="btn btn-danger" (click)="onDelete.emit(id())">
+                <i class="fa-duotone fa-solid fa-trash"></i>
+              </button>
+            </div>
+          }
+          @if (showEdit()) {
+            <div class="col-auto">
+              <button class="btn btn-primary" (click)="onEdit.emit(id())">
+                <i class="fa-duotone fa-solid fa-pen"></i>
+              </button>
+            </div>
+          }
+
+        </div>
+      </div>
+    </div>
+  }
+</div>
